@@ -1,4 +1,5 @@
 import './App.css';
+import Father from './components/container/father';
 import TaskListComponent from './components/container/task_list.jsx';
 import Ejemplo1 from './hooks/Ejemplo1';
 import Ejemplo2 from './hooks/Ejemplo2';
@@ -9,7 +10,7 @@ function App() {
   return (
     <div className="App">
       
-        <TaskListComponent/>
+        {/* <TaskListComponent/> */}
         {/* <Ejemplo1/> */}
         {/* <Ejemplo2/> */}
         {/* <MiComponenteConContexto/> */}
@@ -18,7 +19,8 @@ function App() {
           {/* <h3>Todo esto se pinta en props.children</h3> */}
         {/* </Ejemplo4> */}
         {/* <GrettingStyled nombre="Martin"/> */}
- 
+        {/* Gestion de eventos */}
+        <Father/>
     </div>
   );
 }
