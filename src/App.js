@@ -8,8 +8,8 @@ import GrettingStyled from './pure/grettingStyled';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        {/* <TaskListComponent/> */}
+      
+        <TaskListComponent/>
         {/* <Ejemplo1/> */}
         {/* <Ejemplo2/> */}
         {/* <MiComponenteConContexto/> */}
@@ -17,8 +17,8 @@ function App() {
           {/* Esto es props.children */}
           {/* <h3>Todo esto se pinta en props.children</h3> */}
         {/* </Ejemplo4> */}
-        <GrettingStyled nombre="Martin"/>
-      </header>
+        {/* <GrettingStyled nombre="Martin"/> */}
+ 
     </div>
   );
 }
