@@ -17,7 +17,7 @@ function App() {
           {/* Esto es props.children */}
           {/* <h3>Todo esto se pinta en props.children</h3> */}
         {/* </Ejemplo4> */}
-        <GrettingStyled name="Martin"/>
+        <GrettingStyled nombre="Martin"/>
       </header>
     </div>
   );

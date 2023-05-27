@@ -23,11 +23,15 @@ const unloggedStyle = {
 
 const GrettingStyled = (props) => {
 
+
     const [logged, setLogged] = useState(false);
+
+    // const greetingUser = (props) => (<p>Hola, {props.nombre}</p>)
+    // const pleaseLogin = () => (<p>Por favor, logueate</p>)
+    
     return (
         <div style={logged ? loggedStyle : unloggedStyle} >
-            {logged ? (<p>Hola, {props.name}</p>) : (<p>Por favor, logueate</p>)}
-            
+            {logged ? (<p>Hola, {props.nombre}</p>) : (<p>Por favor, logueate</p>) }
             <button onClick={() => {
                 console.log('Botón pulsado')
                 setLogged(!logged)
