@@ -27,9 +27,15 @@ const TaskListComponent = () => {
         };
     }, [tasks]);
 
-    const changeCompleted = () => {
-        console.log('Cambiar el estado de una tarea')
+   
+    function completeTask(task){
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks[index].completed = !tempTasks[index].completed;
+        // Actualizamos el estado del componente y el icono
+        setTasks(tempTasks);
     }
+
     return (
 
         <div>
@@ -53,7 +59,8 @@ const TaskListComponent = () => {
                                     return (
                                         <TaskComponent 
                                             key = {index} 
-                                            task={task}/>
+                                            task={task}
+                                            complete={completeTask}/>
                                         
                                         )
                                 })}

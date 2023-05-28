@@ -46,7 +46,7 @@ const Child = ({ name, send, update}) => {
             </button>
             <div style={{marginTop:'20px'}}>
                 <form onSubmit={submitName}>
-                    <input ref = {nameRef}type="text" placeholder='New name' />
+                    <input ref = {nameRef} type="text" placeholder='New name' />
                     <button type='submit'>Update Name</button>
                 </form>
             </div>

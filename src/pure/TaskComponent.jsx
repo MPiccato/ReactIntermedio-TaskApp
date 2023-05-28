@@ -4,7 +4,7 @@ import {Task} from '../models/task.class.js'
 import '../styles/task.scss'
 import { LEVELS } from '../models/levels.enum.js';
 
-export const TaskComponent = ({task}) => {
+export const TaskComponent = ({task, complete}) => {
 
     useEffect(() => {
         console.log('tarea creada')
@@ -52,9 +52,9 @@ export const TaskComponent = ({task}) => {
     /**Function that returns icons depending completion tasks */
     function taskIconCompleted(){
         if (task.completed) {
-            return (<i className='bi-toggle-on' style={{color:'green', fontWeight:'bold'}}></i>)
+            return (<i onClick={()=> complete(task)} className='bi-toggle-on task-action' style={{color:'green', fontWeight:'bold'}}></i>)
         } else {
-            return (<i className='bi-toggle-off' style={{color:'red', fontWeight:'bold'}}></i>)
+            return (<i onClick={()=> complete(task)} className='bi-toggle-off task-action' style={{color:'red', fontWeight:'bold'}}></i>)
         }
     }
 
@@ -66,7 +66,7 @@ export const TaskComponent = ({task}) => {
             <td><span className='align-middle'>{task.description}</span></td>
             <td>{taskLevelBadge()}</td>
             <td className='align-middle'>{taskIconCompleted()}
-                <i className='bi-trash' style={{color:'tomato', fontSize:'20px'}}></i>
+                <i className='bi-trash task-action' style={{color:'tomato', fontSize:'20px'}}></i>
             </td>
 
         </tr>
@@ -76,7 +76,8 @@ export const TaskComponent = ({task}) => {
 
 
 TaskComponent.propTypes = {
-    task: PropTypes.instanceOf(Task)
+    task: PropTypes.instanceOf(Task).isRequired,
+    complete: PropTypes.func.isRequired
 };
 
 

@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       
-        {/* <TaskListComponent/> */}
+        <TaskListComponent/>
         {/* <Ejemplo1/> */}
         {/* <Ejemplo2/> */}
         {/* <MiComponenteConContexto/> */}
@@ -20,7 +20,7 @@ function App() {
         {/* </Ejemplo4> */}
         {/* <GrettingStyled nombre="Martin"/> */}
         {/* Gestion de eventos */}
-        <Father/>
+        {/* <Father/> */}
     </div>
   );
 }
