@@ -36,6 +36,14 @@ const TaskListComponent = () => {
         setTasks(tempTasks);
     }
 
+    function deleteTask(task){
+        const index = tasks.indexOf(task);
+        const tempTasks = [...tasks];
+        tempTasks.splice(index,1);
+        setTasks(tempTasks);
+
+    }
+
     return (
 
         <div>
@@ -60,7 +68,9 @@ const TaskListComponent = () => {
                                         <TaskComponent 
                                             key = {index} 
                                             task={task}
-                                            complete={completeTask}/>
+                                            complete={completeTask}
+                                            remove={deleteTask}
+                                            />
                                         
                                         )
                                 })}

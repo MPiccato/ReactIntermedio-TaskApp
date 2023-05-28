@@ -1,9 +1,37 @@
 import React, {useRef} from 'react';
+import PropTypes from 'prop-types'
+import { LEVELS } from '../../models/levels.enum';
+import {Task} from '../../models/task.class'
+const TaskForm = ({add}) => {
 
-const TaskForm = () => {
+    const nameRef = useRef();
+    const descriptionRef = useRef();
+    const levelRef = useRef(LEVELS.NORMAL);
+
+    function addTask(e){
+        e.preventDefault();
+        const newTask = new Task(
+            nameRef.current.value,
+            descriptionRef.current.value,
+            false,
+            levelRef.current.value,
+        );
+        add(newTask);
+
+    }
+
     return (
-        <form action=""></form>
+        <form onSubmit={addTask} className='d-flex justify-content-center align-item-center mb-4'>
+            <div className='form-outline flex-fill'>
+                <input type="text" ref={nameRef} id = 'inputName' className='form-control' />
+            </div>
+
+        </form>
     );
+}
+
+TaskForm.propTypes = {
+    add: PropTypes.func.isRequired
 }
 
 export default TaskForm;
