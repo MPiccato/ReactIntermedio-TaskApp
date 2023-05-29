@@ -23,8 +23,20 @@ const TaskForm = ({add}) => {
     return (
         <form onSubmit={addTask} className='d-flex justify-content-center align-item-center mb-4'>
             <div className='form-outline flex-fill'>
-                <input type="text" ref={nameRef} id = 'inputName' className='form-control' />
+                <input type="text" placeholder= 'Tarea...'ref={nameRef} id = 'inputName' className='form-control form-control-lg' required autoFocus />
+                <input type="text" placeholder= 'Descripción' ref={descriptionRef} id = 'inputDescription' className='form-control form-control-lg' required/>
+                <label htmlFor='selectLevel' className='sr-only'>Prioridad</label>
+                <select ref={levelRef} defaultValue={LEVELS.NORMAL} id="selectLevel">
+                    <option value={LEVELS.NORMAL}>Normal</option>
+                    <option value={LEVELS.URGENT}>Urgente</option>
+                    <option value={LEVELS.BLOQUING}>Bloqueado</option>
+
+                </select>
+
+            
+            
             </div>
+            <button type='submit' className='btn btn-success btn-lg ms-2'>Agregar</button>
 
         </form>
     );
