@@ -4,13 +4,14 @@ import TaskListComponent from './components/container/task_list.jsx';
 import Ejemplo1 from './hooks/Ejemplo1';
 import Ejemplo2 from './hooks/Ejemplo2';
 import Ejemplo4 from './hooks/Ejemplo4';
+import OptionalRender from './pure/OptionalRender';
 import GrettingStyled from './pure/grettingStyled';
 // import {MiComponenteConContexto} from './hooks/Ejemplo3.jsx'
 function App() {
   return (
     <div className="App">
       
-        <TaskListComponent/>
+        {/* <TaskListComponent/> */}
         {/* <Ejemplo1/> */}
         {/* <Ejemplo2/> */}
         {/* <MiComponenteConContexto/> */}
@@ -21,6 +22,8 @@ function App() {
         {/* <GrettingStyled nombre="Martin"/> */}
         {/* Gestion de eventos */}
         {/* <Father/> */}
+        {/* Ejemplos de renderizado condicional */}
+        <OptionalRender/>
     </div>
   );
 }
